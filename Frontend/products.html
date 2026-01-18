@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products | Slooze</title>
+</head>
+<body>
+<h1>Products</h1>
+
+<ul id="product-list"></ul>
+
+<!-- Add product form (visible to Manager only) -->
+<form id="add-product-form" style="margin-top:1rem;display:block;">
+  <input type="text" id="product-name" placeholder="Product name" />
+  <input type="number" id="product-stock" placeholder="Stock" />
+  <button type="submit">Add Product</button>
+</form>
+
+<a href="#" onclick="logout()">Logout</a>
+
+<script src="../js/products.js"></script>
+<script src="../js/logout.js"></script>
+</body>
+</html>

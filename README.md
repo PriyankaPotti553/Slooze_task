@@ -47,7 +47,7 @@ This is a frontend-only challenge implemented with HTML, CSS and JavaScript. Bac
 ## How to run
 
 1. Open the project folder in VS Code.
-2. Open `Frontend/signup.html` (use Live Server extension for best results).
+2. Open `Frontend/index.html` (use Live Server extension for best results).
 3. Create an account, then login and verify role-based navigation.
 
 ## What I changed/fixed

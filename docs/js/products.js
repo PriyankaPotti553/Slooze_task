@@ -35,10 +35,11 @@ function render() {
       <div class="product-actions">
         <button class="btn">View</button>
         <button class="btn">Edit</button>
+        <button class="btn danger">Delete</button>
       </div>
     `;
 
-    const [viewBtn, editBtn] = card.querySelectorAll("button");
+    const [viewBtn, editBtn, deleteBtn] = card.querySelectorAll("button");
     viewBtn.onclick = () => alert(`${p.name}\nStock: ${p.stock}`);
     editBtn.onclick = () => {
       if (localStorage.getItem("role") !== "Manager") { alert("Only Managers can edit products"); return; }
@@ -50,6 +51,15 @@ function render() {
         // notify other parts of the app that products changed
         window.dispatchEvent(new Event('productsUpdated'));
       }
+    };
+
+    deleteBtn.onclick = () => {
+      if (localStorage.getItem("role") !== "Manager") { alert("Only Managers can delete products"); return; }
+      if (!confirm(`Delete product "${p.name}"? This action cannot be undone.`)) return;
+      products.splice(i, 1);
+      localStorage.setItem("products", JSON.stringify(products));
+      render();
+      window.dispatchEvent(new Event('productsUpdated'));
     };
     list.appendChild(card);
   });

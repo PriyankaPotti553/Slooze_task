@@ -32,8 +32,14 @@
 
     const products = document.createElement("a");
     products.href = "./products.html";
-    products.textContent = "Products";
-    nav.appendChild(products);
+  products.textContent = "Products";
+  // add a live badge for product count
+  const badge = document.createElement('span');
+  badge.className = 'product-badge';
+  badge.id = 'product-count-badge';
+  badge.style.display = 'none';
+  products.appendChild(badge);
+  nav.appendChild(products);
 
     if (!loggedIn) {
       const login = document.createElement("a");
@@ -73,6 +79,20 @@
     header.appendChild(brand);
     header.appendChild(nav);
     document.body.prepend(header);
+
+    // update product count badge when products change
+    function updateProductBadge() {
+      const list = JSON.parse(localStorage.getItem('products') || '[]');
+      const count = Array.isArray(list) ? list.length : 0;
+      const el = document.getElementById('product-count-badge');
+      if (!el) return;
+      if (count > 0) { el.textContent = count; el.style.display = 'inline-block'; }
+      else { el.textContent = ''; el.style.display = 'none'; }
+    }
+
+    updateProductBadge();
+    window.addEventListener('productsUpdated', updateProductBadge);
+    window.addEventListener('storage', (e) => { if (e.key === 'products') updateProductBadge(); });
   }
 
   document.addEventListener("DOMContentLoaded", createHeader);

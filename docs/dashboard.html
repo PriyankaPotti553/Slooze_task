@@ -12,8 +12,14 @@
       <h1 style="margin:0;color:var(--text)">Manager Dashboard</h1>
       <p class="product-meta">Overview of commodities and operations.</p>
       <div style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap">
-        <div class="product-card" style="flex:1;min-width:180px"><h3>Total Commodities</h3><div class="product-meta">120</div></div>
-        <div class="product-card" style="flex:1;min-width:180px"><h3>Low Stock Items</h3><div class="product-meta">6</div></div>
+        <div class="product-card" style="flex:1;min-width:180px">
+          <h3>Total Commodities</h3>
+          <div class="product-meta"><span id="product-count">0</span></div>
+        </div>
+        <div class="product-card" style="flex:1;min-width:180px">
+          <h3>Low Stock Items</h3>
+          <div class="product-meta"><span id="lowstock-count">0</span></div>
+        </div>
       </div>
       <div style="margin-top:1rem"><a href="./products.html" class="btn">View Products</a><a href="#" onclick="logout()" class="btn" style="margin-left:0.5rem">Logout</a></div>
     </div>

@@ -4,15 +4,11 @@
   <meta charset="UTF-8">
   <title>Sign Up | Slooze</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    body { display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(135deg,#10b981,#059669);font-family:Arial }
-    .auth-box{background:#fff;padding:2rem;border-radius:1rem;width:350px;text-align:center}
-    input,select,button{width:100%;padding:0.75rem;margin:0.5rem 0}
-    button{background:#200596;color:rgba(14,143,126,0.95);border:none}
-  </style>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <div class="auth-box">
+  <div class="auth-container">
+    <div class="auth-box">
     <h2>Create Account</h2>
     <form id="signup-form">
       <input type="text" id="name" placeholder="Full Name" required>
@@ -26,6 +22,7 @@
       <button type="submit">Sign Up</button>
     </form>
     <p>Already have an account? <a href="./login.html">Login</a></p>
+    </div>
   </div>
 
   <script src="./js/theme.js"></script>

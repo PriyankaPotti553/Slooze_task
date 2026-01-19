@@ -1,27 +1,18 @@
-name: Deploy Frontend to GitHub Pages
+name: Deprecated - Pages workflow disabled
 
-on:
+# This workflow has been intentionally disabled. The repository now uses the
+# /docs folder and the repository Pages settings (Settings → Pages → Deploy from branch: main /docs).
+# To avoid accidental deployments, this workflow will not run for normal pushes.
+
+
   push:
     branches:
-      - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      - do-not-run
 
 jobs:
-  deploy:
+  noop:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     steps:
-      - uses: actions/checkout@v4
+      - name: No-op
+        run: echo "Pages workflow disabled; deploy from /docs via repo settings."
 
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./Frontend
-
-      - uses: actions/deploy-pages@v4

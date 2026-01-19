@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Products | Slooze</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 style="margin:0;color:var(--text)">Products</h1>
+
+      <p class="product-meta">Browse commodities available in inventory.</p>
+
+      <div class="controls" style="margin-top:0.75rem">
+        <input id="search" placeholder="Search products" style="padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent" />
+      </div>
+
+      <div class="products-grid card" id="product-list" style="margin-top:1rem"></div>
+
+      <div class="footer">Manage inventory and view stock levels. Managers can add products using the form below.</div>
+    </div>
+
+    <!-- Add product form (visible to Manager only) -->
+    <form id="add-product-form" style="margin-top:1rem;display:block;max-width:500px;">
+      <input type="text" id="product-name" placeholder="Product name" style="width:60%;padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);margin-right:0.5rem" />
+      <input type="number" id="product-stock" placeholder="Stock" style="width:25%;padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);margin-right:0.5rem" />
+      <button type="submit" class="btn primary">Add Product</button>
+    </form>
+  </div>
+
+  <script src="./js/theme.js"></script>
+  <script src="./js/nav.js"></script>
+  <script src="./js/logout.js"></script>
+  <script src="./js/products.js"></script>
+</body>
+</html>

@@ -95,5 +95,10 @@
     window.addEventListener('storage', (e) => { if (e.key === 'products') updateProductBadge(); });
   }
 
-  document.addEventListener("DOMContentLoaded", createHeader);
+  // If document is already loaded (script included at end of body), run immediately.
+  if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", createHeader);
+  } else {
+    createHeader();
+  }
 })();
